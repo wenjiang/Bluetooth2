@@ -44,7 +44,7 @@
     <Button
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
-            android:text="设置密钥"
+            android:text="发送密钥"
             android:id="@+id/key"/>
 
     <ImageView

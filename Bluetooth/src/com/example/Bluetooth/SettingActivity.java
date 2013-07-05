@@ -43,6 +43,7 @@ public class SettingActivity extends Activity {
         disautomaticBt = (RadioButton) this.findViewById(R.id.disAutomatic);
         editText = (EditText) this.findViewById(R.id.time);
         provider = new PropertiesProvider(this);
+
         time = provider.get("time").toString();
         editText.setText(time);
         isAutomatic = Boolean.valueOf(provider.get("isAutomatic").toString());

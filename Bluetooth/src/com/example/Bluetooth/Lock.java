@@ -23,7 +23,7 @@ public class Lock {
     public void createKey(String path) {
         File file = new File(path);
         int len;
-        byte[] keyByte = new byte[64];
+        byte[] keyByte = new byte[128];
         MessageDigest digest = null;
         try {
             digest = MessageDigest.getInstance("MD5");
@@ -37,7 +37,9 @@ public class Lock {
         }
         BigInteger bigInteger = new BigInteger(1, digest.digest());
         key = bigInteger.toString(32);
-
+        while (key.getBytes().length != 64) {
+            key += '0';
+        }
     }
 
     public void sendKey() {

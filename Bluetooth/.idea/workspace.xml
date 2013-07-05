@@ -36,16 +36,15 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="log1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63a8c4e3-0541-40ba-850e-c3a5649e8973" name="Default" comment="" />
     <ignored path="Bluetooth.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/res/values/strings.xml" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372342126629" ignored="false" />
-    <file path="/Lock.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372769622643" ignored="false" />
-    <file path="/BluetoothClient.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372692159169" ignored="false" />
-    <file path="/MyActivity.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372749663291" ignored="false" />
+    <file path="/Lock.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373041643857" ignored="false" />
+    <file path="/BluetoothClient.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373039800266" ignored="false" />
+    <file path="/MyActivity.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373039019631" ignored="false" />
     <file path="/main.xml" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372684139746" ignored="false" />
     <file path="/OpenPresenter.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372426017341" ignored="false" />
     <file path="/AutomaticOpenLockActivity.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372406069510" ignored="false" />
@@ -54,22 +53,28 @@
     <file path="/OpenLockView.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372427794248" ignored="false" />
     <file path="/IView.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372425428934" ignored="false" />
     <file path="/MainActivity.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372674976860" ignored="false" />
-    <file path="/SettingActivity.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372770797268" ignored="false" />
-    <file path="/Dummy.txt" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372518578290" ignored="false" />
+    <file path="/SettingActivity.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373041769803" ignored="false" />
+    <file path="/Dummy.txt" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373034885008" ignored="false" />
     <file path="/SettingLayout.xml" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372680612616" ignored="false" />
     <file path="/automaticOpenActivity.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372518375075" ignored="false" />
     <file path="/preferencesProvider.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372604635745" ignored="false" />
     <file path="/automaticOpenLayout.xml" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372672868978" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/example/Bluetooth/R.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372731981171" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/example/Bluetooth/R.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373030761275" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/example/Bluetooth/Manifest.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372680878892" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372682564284" ignored="false" />
-    <file path="/settinglayout.xml" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372752897892" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373030750805" ignored="false" />
+    <file path="/settinglayout.xml" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373034680461" ignored="false" />
     <file path="/PreferencesProvider.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372736751301" ignored="false" />
     <file path="/BluetoothTest.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372732778460" ignored="false" />
     <file path="/fragment.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372732809984" ignored="false" />
     <file path="/PropertiesProvider.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372757613895" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/example/Bluetooth/BuildConfig.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372749258557" ignored="false" />
     <file path="/SettingKeyActivity.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1372750770486" ignored="false" />
+    <file path="/BluetoothReceiver.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373003592651" ignored="false" />
+    <file path="/SearchActivity.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373042174028" ignored="false" />
+    <file path="/search.xml" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373027610400" ignored="false" />
+    <file path="/Utils.java" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373029073100" ignored="false" />
+    <file path="/searchlayout.xml" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373031453232" ignored="false" />
+    <file path="/anothermainlayout.xml" changelist="63a8c4e3-0541-40ba-850e-c3a5649e8973" time="1373034975071" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +89,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -120,7 +126,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -133,21 +138,28 @@
       <file leaf-file-name="MyActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="60" selection-start="2197" selection-end="2197" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#808#1047#0" expanded="true" />
-                <element signature="e#1036#1037#0" expanded="true" />
-                <element signature="e#1530#1667#0" expanded="true" />
-                <element signature="e#1656#1657#0" expanded="true" />
-              </folding>
+            <state line="39" column="42" selection-start="1303" selection-end="1303" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="anothermainlayout.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/anothermainlayout.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="41" selection-start="494" selection-end="494" vertical-scroll-proportion="-4.6666665">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="55" selection-start="435" selection-end="435" vertical-scroll-proportion="-3.3333333">
+            <state line="9" column="19" selection-start="262" selection-end="488" vertical-scroll-proportion="-3.0">
               <folding />
             </state>
           </provider>
@@ -159,25 +171,15 @@
       <file leaf-file-name="SettingActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/SettingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="13" selection-start="4416" selection-end="4416" vertical-scroll-proportion="0.0">
+            <state line="37" column="58" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1839#2225#0" expanded="true" />
-                <element signature="e#2214#2215#0" expanded="true" />
-                <element signature="e#2267#2776#0" expanded="true" />
-                <element signature="e#2765#2766#0" expanded="true" />
-                <element signature="e#2824#3106#0" expanded="true" />
-                <element signature="e#3095#3096#0" expanded="true" />
+                <element signature="e#1840#2226#0" expanded="true" />
+                <element signature="e#2215#2216#0" expanded="true" />
+                <element signature="e#2268#2777#0" expanded="true" />
+                <element signature="e#2766#2767#0" expanded="true" />
+                <element signature="e#2825#3107#0" expanded="true" />
+                <element signature="e#3096#3097#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -185,31 +187,8 @@
       <file leaf-file-name="PropertiesProvider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/PropertiesProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="44" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.0">
+            <state line="35" column="74" selection-start="1058" selection-end="1058" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settinglayout.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/settinglayout.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="62" selection-start="1273" selection-end="1273" vertical-scroll-proportion="-8.490196">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lock.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/Lock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="46" selection-start="970" selection-end="970" vertical-scroll-proportion="0.36177474">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -217,9 +196,65 @@
       <file leaf-file-name="BluetoothClient.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/BluetoothClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="24" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
+            <state line="21" column="79" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0">
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/SearchActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="101" column="17" selection-start="3722" selection-end="3722" vertical-scroll-proportion="0.53583616">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#809#826#0" expanded="true" />
+                <element signature="e#901#1311#0" expanded="true" />
+                <element signature="e#1304#1305#0" expanded="true" />
+                <element signature="e#1361#1638#0" expanded="true" />
+                <element signature="e#1631#1632#0" expanded="true" />
+                <element signature="e#1688#1933#0" expanded="true" />
+                <element signature="e#1926#1927#0" expanded="true" />
+                <element signature="e#2692#3012#0" expanded="true" />
+                <element signature="e#3001#3002#0" expanded="true" />
+                <element signature="e#3104#3112#0" expanded="true" />
+                <element signature="e#3630#3638#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Lock.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/Lock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="55" selection-start="971" selection-end="971" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="62" selection-start="785" selection-end="785" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2269#2571#0" expanded="true" />
+                <element signature="e#2552#2553#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchlayout.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/searchlayout.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="40" selection-start="367" selection-end="367" vertical-scroll-proportion="-3.0">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -233,22 +268,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/example/Bluetooth/preferencesProvider.java" />
-        <option value="$PROJECT_DIR$/res/layout/automaticOpenLayout.xml" />
-        <option value="$PROJECT_DIR$/res/layout/disautomaticOpenLayout.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/Bluetooth/MainActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/SettingLayout.xml" />
-        <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/Bluetooth/BluetoothClient.java" />
-        <option value="$PROJECT_DIR$/BluetoothTest/src/BluetoothTest.java" />
         <option value="$PROJECT_DIR$/src/com/example/Bluetooth/PreferencesProvider.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/Bluetooth/MyActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/Bluetooth/SettingKeyActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/settinglayout.xml" />
         <option value="$PROJECT_DIR$/src/com/example/Bluetooth/PropertiesProvider.java" />
+        <option value="$PROJECT_DIR$/src/com/example/Bluetooth/RelayControl.java" />
+        <option value="$PROJECT_DIR$/src/com/example/Bluetooth/BluetoothReceiver.java" />
+        <option value="$PROJECT_DIR$/res/layout/search.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/searchlayout.xml" />
+        <option value="$PROJECT_DIR$/res/layout/settinglayout.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/Bluetooth/Utils.java" />
+        <option value="$PROJECT_DIR$/res/layout/anothermainlayout.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/Bluetooth/MyActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/Bluetooth/Lock.java" />
         <option value="$PROJECT_DIR$/src/com/example/Bluetooth/SettingActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/Bluetooth/BluetoothClient.java" />
+        <option value="$PROJECT_DIR$/src/com/example/Bluetooth/SearchActivity.java" />
       </list>
     </option>
   </component>
@@ -284,8 +319,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -322,8 +355,42 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bluetooth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bluetooth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bluetooth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bluetooth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,10 +407,15 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="android" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UI\Bluetooth\src\com\example\Bluetooth" />
+    </key>
   </component>
   <component name="RunManager" selected="Android Application.Bluetooth">
     <configuration default="false" name="BluetoothTest" type="AndroidTestRunConfigurationType" factoryName="Android Tests" temporary="true">
@@ -424,19 +496,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -462,6 +521,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -575,12 +647,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6013629" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6013629" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33901194" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -593,15 +668,12 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23333333" sideWeight="0.66609883" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3339012" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6013629" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6013629" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293718" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293718" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -669,25 +741,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/MyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="61" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#808#1047#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1530#1667#0" expanded="true" />
-            <element signature="e#1656#1657#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/Lock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="34" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/BluetoothClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="40" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
@@ -702,72 +755,78 @@
     </entry>
     <entry file="file://D:/android-sdk_r08-windows/android-sdk-windows/sources/android-16/android/app/Instrumentation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1079" column="0" selection-start="41383" selection-end="41383" vertical-scroll-proportion="0.19720767">
+        <state line="1079" column="0" selection-start="41383" selection-end="41383" vertical-scroll-proportion="0.19720767" />
+      </provider>
+    </entry>
+    <entry file="file://D:/android-sdk_r08-windows/android-sdk-windows/sources/android-16/android/os/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="35" selection-start="3870" selection-end="3870" vertical-scroll-proportion="0.33333334">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/BluetoothClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="24" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/MyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="60" selection-start="2197" selection-end="2197" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#808#1047#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1530#1667#0" expanded="true" />
-            <element signature="e#1656#1657#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="55" selection-start="435" selection-end="435" vertical-scroll-proportion="-3.3333333">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/SettingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="13" selection-start="4416" selection-end="4416" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1839#2225#0" expanded="true" />
-            <element signature="e#2214#2215#0" expanded="true" />
-            <element signature="e#2267#2776#0" expanded="true" />
-            <element signature="e#2765#2766#0" expanded="true" />
-            <element signature="e#2824#3106#0" expanded="true" />
-            <element signature="e#3095#3096#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0">
+        <state line="7" column="78" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/settinglayout.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="29" selection-start="1587" selection-end="1587" vertical-scroll-proportion="-6.1568627">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="62" selection-start="785" selection-end="785" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2269#2571#0" expanded="true" />
+            <element signature="e#2552#2553#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="19" selection-start="262" selection-end="488" vertical-scroll-proportion="-3.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/Lock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="55" selection-start="971" selection-end="971" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/PropertiesProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="44" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.0">
+        <state line="35" column="74" selection-start="1058" selection-end="1058" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/settinglayout.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/BluetoothClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="62" selection-start="1273" selection-end="1273" vertical-scroll-proportion="-8.490196">
+        <state line="21" column="79" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/anothermainlayout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="41" selection-start="494" selection-end="494" vertical-scroll-proportion="-4.6666665">
           <folding />
         </state>
       </provider>
@@ -775,11 +834,53 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/Lock.java">
+    <entry file="file://$PROJECT_DIR$/res/layout/searchlayout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="46" selection-start="970" selection-end="970" vertical-scroll-proportion="0.36177474">
+        <state line="9" column="40" selection-start="367" selection-end="367" vertical-scroll-proportion="-3.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/MyActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="42" selection-start="1303" selection-end="1303" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/SettingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="58" selection-start="1084" selection-end="1084" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1840#2226#0" expanded="true" />
+            <element signature="e#2215#2216#0" expanded="true" />
+            <element signature="e#2268#2777#0" expanded="true" />
+            <element signature="e#2766#2767#0" expanded="true" />
+            <element signature="e#2825#3107#0" expanded="true" />
+            <element signature="e#3096#3097#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/Bluetooth/SearchActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="17" selection-start="3722" selection-end="3722" vertical-scroll-proportion="0.53583616">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#809#826#0" expanded="true" />
+            <element signature="e#901#1311#0" expanded="true" />
+            <element signature="e#1304#1305#0" expanded="true" />
+            <element signature="e#1361#1638#0" expanded="true" />
+            <element signature="e#1631#1632#0" expanded="true" />
+            <element signature="e#1688#1933#0" expanded="true" />
+            <element signature="e#1926#1927#0" expanded="true" />
+            <element signature="e#2692#3012#0" expanded="true" />
+            <element signature="e#3001#3002#0" expanded="true" />
+            <element signature="e#3104#3112#0" expanded="true" />
+            <element signature="e#3630#3638#0" expanded="true" />
           </folding>
         </state>
       </provider>
