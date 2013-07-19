@@ -1,19 +1,16 @@
 package com.example.Bluetooth;
 
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
 public class MyActivity extends Activity {
     private boolean isAutomatic;
-    private boolean isDisautomatic;
-    private String information = "";
-    private Lock lock;
-    private BluetoothClient bluetoothClient;
-    private String time;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,26 +29,33 @@ public class MyActivity extends Activity {
         PropertiesProvider provider = new PropertiesProvider(this);
         try {
             isAutomatic = Boolean.valueOf(provider.get("isAutomatic").toString());
-            time = provider.get("time").toString();
         } catch (NullPointerException e) {
-            //TODO Handle the exception
+            Log.e("TAG", e.toString());
         }
         try {
             sendKey();
         } catch (InterruptedException e) {
-            //TODO Handle the exception
+            Log.e("TAG", e.toString());
         }
 
+        search();
+
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            this.finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     private void sendKey() throws InterruptedException {
         if (isAutomatic) {
-            bluetoothClient = new BluetoothClient(MyActivity.this);
-            bluetoothClient.connect();
-            lock = new Lock();
-            lock.sendKey();
+            Intent intent = new Intent(MyActivity.this, SettingActivity.class);
+            startActivity(intent);
         } else {
-            setContentView(R.layout.anothermainlayout);
+            setContentView(R.layout.disautomatic_layout);
 
             Button openLockBt = (Button) this.findViewById(R.id.openBt);
             Button settingBt = (Button) this.findViewById(R.id.setting);
@@ -59,14 +63,8 @@ public class MyActivity extends Activity {
             openLockBt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    try {
-                        bluetoothClient = new BluetoothClient(MyActivity.this);
-                        bluetoothClient.connect();
-                        lock = new Lock();
-                        lock.sendKey();
-                    } catch (InterruptedException e) {
-                        //TODO Handle the exception
-                    }
+                    Intent comminuteIntent = new Intent(MyActivity.this, ComminuteActivity.class);
+                    startActivity(comminuteIntent);
                 }
             });
 
@@ -80,12 +78,14 @@ public class MyActivity extends Activity {
         }
     }
 
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            this.finish();
-            return true;
+    private void search() {
+        BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+        if (!adapter.isEnabled()) {
+            adapter.enable();
         }
-        return super.onKeyDown(keyCode, event);
+        Intent enable = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+        enable.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 3600);//3600为蓝牙设备可见时间
+        startActivity(enable);
     }
 }
 

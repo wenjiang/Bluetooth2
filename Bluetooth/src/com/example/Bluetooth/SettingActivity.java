@@ -8,12 +8,18 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,30 +29,30 @@ import java.io.IOException;
  * To change this template use File | Settings | File Templates.
  */
 public class SettingActivity extends Activity {
-    private String time;
     private boolean isAutomatic;
-    private RadioButton automaticBt;
-    private RadioButton disautomaticBt;
-    private EditText editText;
-    private PropertiesProvider provider;
+    private String time;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settinglayout);
+        setContentView(R.layout.setting_layout);
 
         RadioGroup group = (RadioGroup) this.findViewById(R.id.choices);
         Button saveButton = (Button) this.findViewById(R.id.save);
         Button settingKeyButton = (Button) this.findViewById(R.id.key);
 
-        automaticBt = (RadioButton) this.findViewById(R.id.automatic);
-        disautomaticBt = (RadioButton) this.findViewById(R.id.disAutomatic);
-        editText = (EditText) this.findViewById(R.id.time);
-        provider = new PropertiesProvider(this);
-
-        time = provider.get("time").toString();
+        final RadioButton automaticBt = (RadioButton) this.findViewById(R.id.automatic);
+        final RadioButton disautomaticBt = (RadioButton) this.findViewById(R.id.disAutomatic);
+        final EditText editText = (EditText) this.findViewById(R.id.time);
+        final PropertiesProvider provider = new PropertiesProvider(this);
+        try {
+            time = provider.get("time").toString();
+            isAutomatic = Boolean.valueOf(provider.get("isAutomatic").toString());
+        } catch (Exception e) {
+            time = "0";
+            isAutomatic = false;
+        }
         editText.setText(time);
-        isAutomatic = Boolean.valueOf(provider.get("isAutomatic").toString());
 
         if (isAutomatic) {
             automaticBt.setChecked(true);
@@ -99,10 +105,9 @@ public class SettingActivity extends Activity {
                 Bitmap bitmap = getBitmap(uri);
                 ImageView image = (ImageView) this.findViewById(R.id.image);
                 image.setImageBitmap(bitmap);
-                Lock lock = new Lock();
-                lock.createKey(getPath(uri));
+                createKey(getPath(uri));
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e("TAG", e.toString());
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
@@ -112,6 +117,8 @@ public class SettingActivity extends Activity {
         Bitmap bitmap = null;
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 5;
+        File sdkRoot = Environment.getExternalStorageDirectory();
+        sdkRoot.mkdir();
         AssetFileDescriptor fileDescriptor = null;
         try {
             fileDescriptor = this.getContentResolver().openAssetFileDescriptor(uri, "r");
@@ -122,7 +129,7 @@ public class SettingActivity extends Activity {
                 bitmap = BitmapFactory.decodeFileDescriptor(fileDescriptor.getFileDescriptor(), null, options);
                 fileDescriptor.close();
             } catch (IOException e) {
-                e.printStackTrace();
+                Log.e("TAG", e.toString());
             }
         }
         return bitmap;
@@ -135,5 +142,27 @@ public class SettingActivity extends Activity {
         cursor.moveToFirst();
         String path = cursor.getString(columnIndex);
         return path;
+    }
+
+    private void createKey(String path) {
+        File file = new File(path);
+        int len;
+        byte[] keyByte = new byte[128];
+        MessageDigest digest = null;
+        try {
+            digest = MessageDigest.getInstance("MD5");
+            FileInputStream inputStream = new FileInputStream(file);
+            while ((len = inputStream.read(keyByte, 0, 64)) != -1) {
+                digest.update(keyByte, 0, len);
+            }
+            inputStream.close();
+        } catch (Exception e) {
+            Log.e("TAG", e.toString());
+        }
+        BigInteger bigInteger = new BigInteger(1, digest.digest());
+        String key = bigInteger.toString(32);
+        while (key.getBytes().length != 64) {
+            key += '0';
+        }
     }
 }

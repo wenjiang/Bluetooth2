@@ -1,11 +1,10 @@
 package com.example.Bluetooth;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Properties;
 
 /**
@@ -30,9 +29,8 @@ public class PropertiesProvider {
             FileOutputStream outputStream = context.openFileOutput("value.cfg", Context.MODE_WORLD_WRITEABLE);
             properties.store(outputStream, "");
             outputStream.close();
-        } catch (FileNotFoundException e) {
-            return false;
-        } catch (IOException e) {
+        } catch (Exception e) {
+            Log.e("TAG", e.toString());
             return false;
         }
         return true;
@@ -43,9 +41,8 @@ public class PropertiesProvider {
             FileInputStream inputStream = context.openFileInput("value.cfg");
             properties.load(inputStream);
             inputStream.close();
-        } catch (FileNotFoundException e) {
-            return null;
-        } catch (IOException e) {
+        } catch (Exception e) {
+            Log.e("TAG", e.toString());
             return null;
         }
         return properties.getProperty(key);

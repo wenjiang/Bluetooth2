@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RadioGroup
+            android:id="@+id/choices"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/automatic"
+                android:text="自动开锁"
+                />
+
+        <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/disAutomatic"
+                android:text="手动开锁"
+                />
+    </RadioGroup>
+    <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="请输入开锁延时的时间(单位为秒)"/>
+
+    <EditText
+            android:text="5"
+            android:id="@+id/time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            />
+
+    <Button
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="保存"
+            android:id="@+id/save"/>
+    <Button
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="发送密钥"
+            android:id="@+id/key"/>
+
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/image"/>
+</LinearLayout>
