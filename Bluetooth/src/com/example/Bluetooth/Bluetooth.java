@@ -19,22 +19,23 @@ import java.lang.reflect.Method;
  * To change this template use File | Settings | File Templates.
  */
 public class Bluetooth {
-    private BluetoothDevice device;
-    private boolean isConnect = false;
-    private Handler handler;
-    private BluetoothSocket socket;
     public static final int CONNECT_FAILED = 0;
     public static final int CONNECT_SUCCESS = 1;
     public static final int WRITE_FAILED = 2;
     public static final int READ_FAILED = 3;
     public static final int DATA = 4;
 
+
+    private BluetoothDevice device;
+    private Handler handler;
+    private static BluetoothSocket socket;
+
     public Bluetooth(BluetoothDevice device, Handler handler) {
         this.device = device;
         this.handler = handler;
     }
 
-    public void connect(final String message) {
+    public void connect() {
         Thread thread = new Thread(new Runnable() {
             public void run() {
                 BluetoothSocket tmp = null;
@@ -43,60 +44,103 @@ public class Bluetooth {
                     method = device.getClass().getMethod("createRfcommSocket", new Class[]{int.class});
                     tmp = (BluetoothSocket) method.invoke(device, 1);
                 } catch (Exception e) {
-                    setState(CONNECT_FAILED);
-                    Log.e("TAG", e.toString());
+                    Log.e("CreateSocket", e.toString());
                 }
                 socket = tmp;
                 try {
                     socket.connect();
-                    isConnect = true;
                 } catch (Exception e) {
                     setState(CONNECT_FAILED);
-                    Log.e("TAG", e.toString());
+                    Log.e("Connect", e.toString());
                 }
+                setState(CONNECT_SUCCESS);
+            }
+        });
+        thread.start();
+    }
 
-                if (isConnect) {
-                    try {
-                        OutputStream outStream = socket.getOutputStream();
-                        outStream.write(getHexBytes(message));
-                    } catch (IOException e) {
-                        setState(WRITE_FAILED);
-                        Log.e("TAG", e.toString());
+    public void sendKey(final byte[] bytes) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    OutputStream out = socket.getOutputStream();
+                    for (byte b : bytes) {
+                        out.write(b);
+                        Thread.sleep(10);
                     }
-                    try {
-                        InputStream inputStream = socket.getInputStream();
-                        int data;
-                        while (true) {
-                            try {
-                                data = inputStream.read();
-                                Message msg = handler.obtainMessage();
-                                msg.what = DATA;
-                                msg.arg1 = data;
-                                handler.sendMessage(msg);
-                            } catch (IOException e) {
-                                setState(READ_FAILED);
-                                Log.e("TAG", e.toString());
-                                break;
-                            }
+                    out.flush();
+                } catch (Exception e) {
+                    setState(WRITE_FAILED);
+                    Log.e("Write", e.toString());
+                }
+                try {
+                    while (true) {
+                        if (!Utils.isReceiver) {
+                            read(socket.getInputStream(), 0);
+                            break;
+                        } else {
+                            break;
                         }
-                    } catch (IOException e) {
-                        setState(WRITE_FAILED);
-                        Log.e("TAG", e.toString());
                     }
-                }
-
-                if (socket != null) {
-                    try {
-                        socket.close();
-                    } catch (IOException e) {
-                        Log.e("TAG", e.toString());
-                    }
+                } catch (Exception e) {
+                    setState(READ_FAILED);
+                    Log.e("Read", e.toString());
                 }
             }
-        }
-
-        );
+        });
         thread.start();
+    }
+
+    public void comminute(final byte[] bytes, final int type) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    OutputStream out = socket.getOutputStream();
+                    out.write(bytes);
+                    Thread.sleep(40);
+                    out.flush();
+
+                } catch (Exception e) {
+                    setState(WRITE_FAILED);
+                    Log.e("Write", e.toString());
+                }
+                try {
+                    read(socket.getInputStream(), type);
+                } catch (Exception e) {
+                    setState(READ_FAILED);
+                    Log.e("Read", e.toString());
+                }
+            }
+
+        });
+        thread.start();
+    }
+
+    public void close() {
+        try {
+            if (socket != null) {
+                socket.close();
+            }
+        } catch (Exception e) {
+            Log.e("Close", e.toString());
+        }
+    }
+
+    private void read(InputStream in, int type) throws IOException {
+        int count = 4;
+        byte[] bytes = new byte[4];
+        int realCount = 0;
+        while (realCount < count) {
+            realCount += in.read(bytes, realCount, count - realCount);
+        }
+        String message = Utils.bytesToHexString(bytes);
+        Message msg = handler.obtainMessage();
+        msg.what = DATA;
+        msg.obj = message;
+        msg.arg1 = type;
+        handler.sendMessage(msg);
     }
 
     private void setState(int state) {
@@ -104,17 +148,4 @@ public class Bluetooth {
         msg.what = state;
         handler.sendMessage(msg);
     }
-
-    private byte[] getHexBytes(String message) {
-        int len = message.length() / 2;
-        char[] chars = message.toCharArray();
-        String[] hexStr = new String[len];
-        byte[] bytes = new byte[len];
-        for (int i = 0, j = 0; j < len; i += 2, j++) {
-            hexStr[j] = "" + chars[i] + chars[i + 1];
-            bytes[j] = (byte) Integer.parseInt(hexStr[j], 16);
-        }
-        return bytes;
-    }
-
 }

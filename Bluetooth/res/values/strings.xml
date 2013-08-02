@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bluetooth</string>
+    <string name="app_name">智能蓝牙开锁</string>
+    <drawable name="background_color">#ffffff</drawable>
+    <string name="switch_off">关</string>
+    <string name="switch_on">开</string>
+
+    <string-array name="array_spinner">
+        <item>5秒</item>
+        <item>15秒</item>
+        <item>30秒</item>
+        <item>1分钟</item>
+        <item>5分钟</item>
+        <item>15分钟</item>
+    </string-array>
 </resources>

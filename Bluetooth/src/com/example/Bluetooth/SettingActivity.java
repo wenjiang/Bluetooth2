@@ -1,25 +1,19 @@
 package com.example.Bluetooth;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.res.AssetFileDescriptor;
-import android.database.Cursor;
+import android.content.pm.ApplicationInfo;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.math.BigInteger;
-import java.security.MessageDigest;
 
 /**
  * Created with IntelliJ IDEA.
@@ -29,64 +23,91 @@ import java.security.MessageDigest;
  * To change this template use File | Settings | File Templates.
  */
 public class SettingActivity extends Activity {
-    private boolean isAutomatic;
-    private String time;
+    private final byte[] keySettingBytes = {(byte) 0x55, (byte) 0x01, (byte) 0x01, (byte) 0xAA};
+    private Bluetooth bluetooth;
+    private TextView delayTime;
+    private ArrayAdapter adapter;
+    private PropertiesProvider provider;
+    private String key;
+    private ImageView imageView;
+    private Uri uri;
+    private boolean isAutomatic = false;
+    private int timePosition;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting_layout);
+        Resources resource = getResources();
+        Drawable drawable = resource.getDrawable(R.drawable.background_color);
+        this.getWindow().setBackgroundDrawable(drawable);
+        bluetooth = MyActivity.bluetooth;
+        imageView = (ImageView) findViewById(R.id.image);
+        ApplicationInfo appInfo = getApplicationInfo();
+        int imageID = getResources().getIdentifier("image", "drawable", appInfo.packageName);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), imageID);
+        imageView.setImageBitmap(bitmap);
+        provider = new PropertiesProvider(this);
 
-        RadioGroup group = (RadioGroup) this.findViewById(R.id.choices);
-        Button saveButton = (Button) this.findViewById(R.id.save);
-        Button settingKeyButton = (Button) this.findViewById(R.id.key);
 
-        final RadioButton automaticBt = (RadioButton) this.findViewById(R.id.automatic);
-        final RadioButton disautomaticBt = (RadioButton) this.findViewById(R.id.disAutomatic);
-        final EditText editText = (EditText) this.findViewById(R.id.time);
-        final PropertiesProvider provider = new PropertiesProvider(this);
+        Spinner spinner = (Spinner) this.findViewById(R.id.spinner);
+        delayTime = (TextView) this.findViewById(R.id.delay);
+        adapter = ArrayAdapter.createFromResource(this, R.array.array_spinner,
+                android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(adapter);
+        spinner.setPrompt("请选择开锁延时时间");
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                delayTime.setText("开锁延时时间:" + adapter.getItem(position));
+                String timeStr = adapter.getItem(position).toString();
+                timePosition = position;
+                int time = 0;
+                if (timeStr.indexOf("分") == -1) {
+                    time = Integer.valueOf(timeStr.substring(0, timeStr.length() - 1));
+                } else {
+                    time = Integer.valueOf(timeStr.substring(0, timeStr.length() - 2)) * 60;
+                }
+
+                provider.save("time", time);
+                provider.save("position", position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+        });
+
+        spinner.setVisibility(View.VISIBLE);
+
+        SwitchButton slidBt = (SwitchButton) this.findViewById(R.id.switch_button);
         try {
-            time = provider.get("time").toString();
-            isAutomatic = Boolean.valueOf(provider.get("isAutomatic").toString());
-        } catch (Exception e) {
-            time = "0";
-            isAutomatic = false;
-        }
-        editText.setText(time);
+            isAutomatic = Boolean.valueOf((provider.get("isAutomatic")).toString());
+            timePosition = Integer.valueOf(provider.get("position").toString());
 
-        if (isAutomatic) {
-            automaticBt.setChecked(true);
-        } else {
-            disautomaticBt.setChecked(true);
+        } catch (NullPointerException e) {
+            slidBt.setChecked(false);
+            timePosition = 0;
         }
+        slidBt.setChecked(isAutomatic);
+        spinner.setSelection(timePosition);
+        delayTime.setText("开锁延时时间:" + adapter.getItem(timePosition));
 
-        group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        slidBt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == automaticBt.getId()) {
-                    isAutomatic = true;
-                } else if (checkedId == disautomaticBt.getId()) {
-                    isAutomatic = false;
-                }
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                provider.save("isAutomatic", isChecked);
             }
         });
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                time = editText.getText().toString();
-                if (provider.save("isAutomatic", isAutomatic) &&
-                        provider.save("time", time)) {
-                    Intent intent = new Intent(SettingActivity.this, MyActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
-            }
-        });
-
-        settingKeyButton.setOnClickListener(new View.OnClickListener() {
+        Button settingBt = (Button) this.findViewById(R.id.settingBt);
+        Button sendBt = (Button) this.findViewById(R.id.sendBt);
+        settingBt.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -95,74 +116,54 @@ public class SettingActivity extends Activity {
                 startActivityForResult(intent, 1);
             }
         });
+
+        sendBt.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                sendKey();
+            }
+        });
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
-            Uri uri = data.getData();
+            uri = data.getData();
             try {
-                Bitmap bitmap = getBitmap(uri);
-                ImageView image = (ImageView) this.findViewById(R.id.image);
-                image.setImageBitmap(bitmap);
-                createKey(getPath(uri));
+                Bitmap bitmap = Utils.getBitmap(uri, SettingActivity.this);
+                imageView.setImageBitmap(bitmap);
+                String path = Utils.getPath(uri, SettingActivity.this);
+                provider.save("image", path);
+                key = Utils.createKey(path);
+                bluetooth.comminute(keySettingBytes, 0);
             } catch (Exception e) {
-                Log.e("TAG", e.toString());
+                Log.e("showKey", e.toString());
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    private Bitmap getBitmap(Uri uri) {
-        Bitmap bitmap = null;
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 5;
-        File sdkRoot = Environment.getExternalStorageDirectory();
-        sdkRoot.mkdir();
-        AssetFileDescriptor fileDescriptor = null;
-        try {
-            fileDescriptor = this.getContentResolver().openAssetFileDescriptor(uri, "r");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                bitmap = BitmapFactory.decodeFileDescriptor(fileDescriptor.getFileDescriptor(), null, options);
-                fileDescriptor.close();
-            } catch (IOException e) {
-                Log.e("TAG", e.toString());
+
+    private void sendKey() {
+        final ProgressDialog progressDialog = ProgressDialog.show(SettingActivity.this,
+                "发送", "正在发送中...");
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                Looper.prepare();
+                try {
+                    bluetooth.sendKey(key.getBytes());
+                    progressDialog.dismiss();
+                } catch (Exception e) {
+                    progressDialog.dismiss();
+                    Log.e("SendKey", e.toString());
+                }
+                Looper.loop();
             }
-        }
-        return bitmap;
+        };
+        thread.start();
     }
 
-    private String getPath(Uri uri) {
-        String[] data = {MediaStore.Images.Media.DATA};
-        Cursor cursor = managedQuery(uri, data, null, null, null);
-        int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-        cursor.moveToFirst();
-        String path = cursor.getString(columnIndex);
-        return path;
-    }
 
-    private void createKey(String path) {
-        File file = new File(path);
-        int len;
-        byte[] keyByte = new byte[128];
-        MessageDigest digest = null;
-        try {
-            digest = MessageDigest.getInstance("MD5");
-            FileInputStream inputStream = new FileInputStream(file);
-            while ((len = inputStream.read(keyByte, 0, 64)) != -1) {
-                digest.update(keyByte, 0, len);
-            }
-            inputStream.close();
-        } catch (Exception e) {
-            Log.e("TAG", e.toString());
-        }
-        BigInteger bigInteger = new BigInteger(1, digest.digest());
-        String key = bigInteger.toString(32);
-        while (key.getBytes().length != 64) {
-            key += '0';
-        }
-    }
 }
